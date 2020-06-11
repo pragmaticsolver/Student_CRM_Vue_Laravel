@@ -1,0 +1,19 @@
+.dataTables_wrapper {
+    .dataTable {
+        tbody {
+            tr {
+                background: none;
+            }
+        }
+
+        &.order-column {
+            tbody {
+                tr {
+                    td.sorting_1 {
+                        background: #fff !important;
+                    }
+                }
+            }
+        }
+    }
+}

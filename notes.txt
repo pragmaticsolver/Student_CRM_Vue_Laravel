@@ -1,0 +1,306 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Special Deployment Commands to run
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Delete yoyakus on cancelling class
+~~~~~~~~~~~~~~~~~~~~~~~~~
+DELETE attendances
+FROM attendances
+        LEFT JOIN
+    	yoyakus on yoyakus.id = attendances.yoyaku_id 
+WHERE
+    yoyakus.id IS NULL
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Migrations Cleanup
+~~~~~~~~~~~~~~~~~~~~
+DELETE FROM `migrations` WHERE 1;
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2018_12_03_040219_create_classes_table', 1),
+(4, '2018_12_03_075759_create_payment_plans_table', 1),
+(5, '2018_12_04_045200_create_teachers_table', 1),
+(6, '2018_12_04_083433_create_students_table', 1),
+(7, '2018_12_05_042653_create_payments_table', 1),
+(8, '2018_12_06_035537_create_contacts_table', 1),
+(9, '2018_12_07_022532_create_yoyakus_table', 1),
+(10, '2018_12_10_035651_create_one_shot_yoteis_table', 1),
+(11, '2018_12_10_042747_create_attendances_table', 1),
+(12, '2018_12_15_074829_create_schedules_table', 1),
+(13, '2018_12_22_121708_create_permission_tables', 1),
+(14, '2019_01_01_112955_add_column_students_table', 1),
+(15, '2019_01_09_024841_add_column_classes_table', 1),
+(16, '2019_01_12_021158_create_settings_table', 1),
+(17, '2019_01_14_013444_add_column_payments_table', 1),
+(18, '2019_01_16_021419_create_school_off_days_table', 1),
+(19, '2019_01_17_072241_add_column_status_yoyakus_table', 1),
+(20, '2019_01_18_093345_create_cancel_types_table', 1),
+(21, '2019_01_18_094126_create_cancellation_policies', 1),
+(22, '2019_01_21_015536_change_column_payment_plans_table', 1),
+(23, '2019_01_21_015552_change_column_payments_table', 1),
+(24, '2019_01_22_034416_create_cancel_reservations_table', 1),
+(25, '2019_01_22_073534_add_column_cancel_types_table', 1),
+(26, '2019_01_23_032342_add_column_policy_attendances_table', 1),
+(27, '2019_01_25_023856_create_classes_off_days_table', 1),
+(28, '2019_01_29_023950_create_monthly_payments_table', 1),
+(29, '2019_01_30_034213_add_column_date_yoyakus_table', 1),
+(30, '2019_01_30_034345_add_column_date_attendances_table', 1),
+(31, '2019_02_27_030305_add_column_schedules_table', 1),
+(32, '2019_03_02_041546_create_email_templates_table', 1),
+(33, '2019_03_04_015555_add_columns_type_description_classes_table', 1),
+(34, '2019_03_04_034928_edit_plan_column_classes_table', 1),
+(35, '2019_03_05_091751_add_columns_users_table', 1),
+(36, '2019_03_07_040915_create_books_table', 1),
+(37, '2019_03_07_071335_create_books_students_table', 1),
+(38, '2019_03_11_041054_add_cost_column_classes_table', 1),
+(39, '2019_03_19_041650_add_columns_yoyakus_table', 1),
+(40, '2019_04_01_021131_update_language_email_templates_table', 1),
+(41, '2019_04_11_034951_update_book_students_table', 1),
+(42, '2019_04_11_041450_add_details_columns_books_table', 1),
+(43, '2019_04_27_030856_create_courses_table', 1),
+(44, '2019_04_29_041819_create_lessons_table', 1),
+(45, '2019_05_20_035711_create_units_table', 1),
+(46, '2019_05_20_073526_add_file_columns_lessons_table', 1),
+(47, '2019_05_21_030115_create_tests_table', 1),
+(48, '2019_05_21_042843_create_questions_table', 1),
+(49, '2019_05_21_050043_create_answers_table', 1),
+(50, '2019_05_22_021725_create_schedule_units_table', 1),
+(51, '2019_05_22_021732_create_schedule_lessons_table', 1),
+(52, '2019_05_22_083858_create_student_tests_table', 1),
+(53, '2019_05_23_041347_create_comment_templates_table', 1),
+(54, '2019_05_23_091526_create_course_schedules_table', 1),
+(55, '2019_05_23_091655_add_foreign_keys_constrains_syllabus', 1),
+(56, '2019_05_28_085934_update_user_id_teachers_table', 1),
+(57, '2019_05_29_070428_create_assessments_table', 1),
+(58, '2019_05_29_071102_create_assessment_questions_table', 1),
+(59, '2019_05_30_080954_create_assessment_users_table', 1),
+(60, '2019_05_30_081003_create_assessment_user_questions_table', 1),
+(61, '2019_05_30_085826_create_assessment_lessons_table', 1),
+(62, '2019_05_31_141635_create_paper_tests_table', 1),
+(63, '2019_06_03_065941_create_student_paper_tests_table', 1),
+(64, '2019_06_08_012318_add_foreign_key_class_off_days_table', 1),
+(65, '2019_06_17_081426_add_level_to_classes_students_table', 1),
+(66, '2019_06_17_091331_add_calendar_view_to_users_table', 1),
+(67, '2019_06_20_083127_add_color_coding_teachers_table', 1),
+(68, '2019_06_27_075128_add_login_redirect_path_to_roles_table', 1),
+(69, '2019_06_27_091031_create_class_categories_table', 1),
+(70, '2019_06_27_091318_add_category_id_to_classes_table', 1),
+(71, '2019_06_28_042826_add_is_student_to_roles_table', 1),
+(72, '2019_10_02_070910_remove_unique_email_from_users_table', 1),
+(73, '2019_10_04_073956_add_length_field_to_classes_table', 1),
+(74, '2019_10_05_033250_add_default_lang_field_to_roles_table', 1),
+(75, '2019_10_05_102501_make_home_phone_field_optional_in_students', 1),
+(76, '2019_10_07_074807_add_payment_category_field_to_monthly_payments_table', 1),
+(77, '2019_10_07_114939_add_send_login_details_field_to_roels_table', 1),
+(78, '2019_10_08_040359_add_rfid_token_field_to_students_table', 1),
+(79, '2019_10_09_045133_create_todos_table', 1),
+(80, '2019_10_09_045207_create_todo_tasks_table', 1),
+(81, '2019_10_09_045328_create_todo_accesses_table', 1),
+(82, '2019_10_09_045620_create_todo_task_statuses_table', 1),
+(83, '2019_10_10_072928_add_lat_long_fields_to_students_table', 1),
+(84, '2019_10_11_094317_rename_name_to_title_in_todo_table', 1),
+(85, '2019_10_12_081113_add_new_fields_to_students_table', 1),
+(86, '2019_10_14_035352_add_due_days_field_to_todos_table', 1),
+(87, '2019_10_14_052734_add_custom_due_date_field_to_todo_access_table', 1),
+(88, '2019_10_15_062801_create_todo_files_table', 1),
+(89, '2019_10_16_033917_add_created_by_field_to_todo_task_statuses_table', 1),
+(90, '2019_10_16_062150_create_todo_task_notes_table', 1),
+(91, '2019_10_23_061652_add_default_course_id_field_to_classes_table', 1),
+(92, '2019_10_26_083847_create_class_usages_table', 1),
+(93, '2019_11_01_084050_make_date_field_nullable_in_monthly_payments_table', 1),
+(94, '2019_11_16_082245_create_checkins_table', 1),
+(95, '2019_11_19_130740_make_payment_plan_id_field_to_nullable_in_attendances_table', 1),
+(96, '2019_11_22_045808_create_activities_table', 1),
+(97, '2019_11_22_045911_create_activity_logs_table', 1),
+(98, '2019_11_25_132513_modify_activity_logs_table_description_field', 1),
+(99, '2019_12_03_045439_make_value_field_nullable_in_settings_table', 1),
+(100, '2019_12_04_054709_modify_students_table_levels', 1),
+(101, '2019_12_04_062634_modify_students_table_levels_1', 1),
+(102, '2019_12_06_033313_create_table_user_children', 1),
+(103, '2019_12_07_045518_modify_students_table_parent_user_id', 1),
+(104, '2019_12_07_050242_drop_user_children_table', 1),
+(105, '2019_12_09_063445_create_jobs_table', 1),
+(106, '2019_12_09_063502_create_failed_jobs_table', 1),
+(107, '2019_12_10_042636_create_class_usage_summaries_table', 1),
+(108, '2019_12_11_132858_create_lesson_files_table', 1),
+(109, '2019_12_12_121634_add_objectives_field_to_courses_table', 1),
+(110, '2019_12_12_123924_add_objectives_field_to_units_table', 1),
+(111, '2019_12_12_125130_add_objectives_field_to_lessons_table', 1),
+(112, '2019_12_13_043603_make_fields_optional_on_courses_table', 1),
+(113, '2019_12_13_045421_add_position_field_to_units_table', 1),
+(114, '2019_12_13_065415_add_position_field_to_lessons_table', 1),
+(115, '2019_12_14_031911_remove_schedule_unit_id_field_from_scheduled_lessons', 1),
+(116, '2019_12_14_034031_drop_schedule_units_table', 1),
+(117, '2019_12_14_060025_create_lesson_exercises_table', 1),
+(118, '2019_12_14_060426_add_new_fields_to_lessons_table', 1),
+(119, '2019_12_14_060741_create_lesson_homeworks_table', 1),
+(120, '2019_12_18_101917_create_lesson_exercise_statuses_table', 1),
+(121, '2019_12_18_123432_create_lesson_homework_statuses_table', 1),
+(122, '2019_12_21_051905_add_file_path_field_to_student_paper_tests_table', 1),
+(123, '2019_12_23_033611_add_postion_field_to_assessment_questions', 1),
+(124, '2019_12_23_100027_add_for_student_field_to_assessment_users_table', 1),
+(125, '2019_12_28_102801_add_comment_template_id_fields_to_student_paper_tests_table', 1),
+(126, '2020_01_02_131512_create_password_reset_tokens_table', 1),
+(127, '2020_01_22_032530_add_comments_field_to_schedule_lessons', 1),
+(128, '2020_01_22_114232_create_tags_table', 1),
+(129, '2020_01_23_054457_add_student_tags_table', 1),
+(130, '2020_01_30_102002_add_is_automated_flag_to_tags_table', 1),
+(131, '2020_02_06_125429_create_availability_selection_calendars_table', 1),
+(132, '2020_02_07_111713_create_selection_calender_time_slots_table', 1),
+(133, '2020_02_08_034053_change_type_enum_in_assessment_questions_table', 1),
+(134, '2020_02_08_101601_create_assessment_user_timeslots_table', 1),
+(135, '2020_02_14_032513_make_schedule_id_field_nullable_in_assessment_users_table', 1),
+(136, '2020_02_14_103640_add_descrtion_field_to_assessments_table', 1),
+(137, '2020_02_22_080508_create_email_template_button_texts_table', 1),
+(138, '2020_02_27_064936_add_stripe_fields_to_users_table', 1),
+(139, '2020_02_28_055517_add_payment_status_and_other_fields_to_monthly_payments_table', 1),
+(140, '2020_03_02_051734_add_payment_recieved_at_field_in_monthly_payments_table', 1),
+(141, '2020_03_03_045708_create_payment_settings_table', 1),
+(142, '2020_03_04_065804_create_payment_batches_table', 1),
+(143, '2020_03_05_061559_add_batch_id_field_to_monthly_payments_field', 1),
+(144, '2020_03_10_190547_add_price_field_to_payment_settings_table', 1),
+(145, '2020_03_12_065042_add_number_of_lessons_field_to_payment_settings_table', 1),
+(146, '2020_03_17_093226_add_detail_params_field_to_student_tags_table', 1);
+~~~~~~~~~~~~~~~~~~~~~~
+
+Stripe Integration
+~~~~~~~~~~~~~~~~~~~~~~~
+/opt/plesk/php/7.2/bin/php artisan onetime:migrate_monthly_payment_recrods
+/opt/plesk/php/7.2/bin/php artisan student:update_class_usage
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Deployer Integration
+~~~~~~~~~~~~~~~~~~~~~~~~
+// after first deploy
+// copy data to new folders from old folders
+
+// cp -r /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/images/books /var/www/vhosts/uteach.jp/httpdocs/testdeploy/shared/storage/app/public
+// cp -r /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/images/lesson/video /var/www/vhosts/uteach.jp/httpdocs/testdeploy/shared/storage/app/public/lesson
+// cp /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/images/lesson/* /var/www/vhosts/uteach.jp/httpdocs/testdeploy/shared/storage/app/public/lesson/thumbnail
+// cp /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/lesson_files/* /var/www/vhosts/uteach.jp/httpdocs/testdeploy/shared/storage/app/public/lesson_files
+// cp /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/student_paper_test_files/* /var/www/vhosts/uteach.jp/httpdocs/testdeploy/shared/storage/app/public/student_paper_test_files
+// cp /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/todo_files/* /var/www/vhosts/uteach.jp/httpdocs/testdeploy/shared/storage/app/public/todo_files
+
+// cp /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/images/* /var/www/vhosts/uteach.jp/httpdocs/testdeploy/shared/storage/app/public/students
+// rm /var/www/vhosts/uteach.jp/httpdocs/testdeploy/shared/storage/app/public/students/sort_asc.png
+// rm /var/www/vhosts/uteach.jp/httpdocs/testdeploy/shared/storage/app/public/students/sort_both.png
+// rm /var/www/vhosts/uteach.jp/httpdocs/testdeploy/shared/storage/app/public/students/sort_desc.png
+
+// cp /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/favicon.ico /var/www/vhosts/uteach.jp/httpdocs/testdeploy/shared/storage/app/public/favicon.ico
+// chown uteach /var/www/vhosts/uteach.jp/httpdocs/testdeploy/shared/storage/app/public/favicon.ico
+
+// cp /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/email_header_image* /var/www/vhosts/uteach.jp/httpdocs/testdeploy/shared/storage/app/public/
+// chown uteach /var/www/vhosts/uteach.jp/httpdocs/testdeploy/shared/storage/app/public/email_header_image*
+
+
+// Actual Commands run
+
+For Test project
+
+cp -r /var/www/vhosts/uteach.jp/httpdocs/test_code_1/public/images/books /var/www/vhosts/uteach.jp/httpdocs/test_code/shared/storage/app/public
+cp -r /var/www/vhosts/uteach.jp/httpdocs/test_code_1/public/images/lesson/video /var/www/vhosts/uteach.jp/httpdocs/test_code/shared/storage/app/public/lesson
+cp /var/www/vhosts/uteach.jp/httpdocs/test_code_1/public/images/lesson/* /var/www/vhosts/uteach.jp/httpdocs/test_code/shared/storage/app/public/lesson/thumbnail
+cp /var/www/vhosts/uteach.jp/httpdocs/test_code_1/public/lesson_files/* /var/www/vhosts/uteach.jp/httpdocs/test_code/shared/storage/app/public/lesson_files
+cp /var/www/vhosts/uteach.jp/httpdocs/test_code_1/public/student_paper_test_files/* /var/www/vhosts/uteach.jp/httpdocs/test_code/shared/storage/app/public/student_paper_test_files
+cp /var/www/vhosts/uteach.jp/httpdocs/test_code_1/public/todo_files/* /var/www/vhosts/uteach.jp/httpdocs/test_code/shared/storage/app/public/todo_files
+
+cp /var/www/vhosts/uteach.jp/httpdocs/test_code_1/public/images/* /var/www/vhosts/uteach.jp/httpdocs/test_code/shared/storage/app/public/students
+rm /var/www/vhosts/uteach.jp/httpdocs/test_code/shared/storage/app/public/students/sort_asc.png
+rm /var/www/vhosts/uteach.jp/httpdocs/test_code/shared/storage/app/public/students/sort_both.png
+rm /var/www/vhosts/uteach.jp/httpdocs/test_code/shared/storage/app/public/students/sort_desc.png
+
+cp /var/www/vhosts/uteach.jp/httpdocs/test_code_1/public/favicon.ico /var/www/vhosts/uteach.jp/httpdocs/test_code/shared/storage/app/public/favicon.ico
+chown uteach /var/www/vhosts/uteach.jp/httpdocs/test_code/shared/storage/app/public/favicon.ico
+
+cp /var/www/vhosts/uteach.jp/httpdocs/test_code_1/public/email_header_image* /var/www/vhosts/uteach.jp/httpdocs/test_code/shared/storage/app/public/
+chown uteach /var/www/vhosts/uteach.jp/httpdocs/test_code/shared/storage/app/public/email_header_image*
+
+ln -s /var/www/vhosts/uteach.jp/httpdocs/test_code/current/ test
+
+--------------------------------------------------
+For Demo project
+
+cp demo_code_1/.env demo_code/shared/.env
+
+cp -r /var/www/vhosts/uteach.jp/httpdocs/demo_code_1/public/images/books /var/www/vhosts/uteach.jp/httpdocs/demo_code/shared/storage/app/public
+cp -r /var/www/vhosts/uteach.jp/httpdocs/demo_code_1/public/images/lesson/video /var/www/vhosts/uteach.jp/httpdocs/demo_code/shared/storage/app/public/lesson
+cp /var/www/vhosts/uteach.jp/httpdocs/demo_code_1/public/images/lesson/* /var/www/vhosts/uteach.jp/httpdocs/demo_code/shared/storage/app/public/lesson/thumbnail
+cp /var/www/vhosts/uteach.jp/httpdocs/demo_code_1/public/lesson_files/* /var/www/vhosts/uteach.jp/httpdocs/demo_code/shared/storage/app/public/lesson_files
+cp /var/www/vhosts/uteach.jp/httpdocs/demo_code_1/public/student_paper_test_files/* /var/www/vhosts/uteach.jp/httpdocs/demo_code/shared/storage/app/public/student_paper_test_files
+cp /var/www/vhosts/uteach.jp/httpdocs/demo_code_1/public/todo_files/* /var/www/vhosts/uteach.jp/httpdocs/demo_code/shared/storage/app/public/todo_files
+
+cp /var/www/vhosts/uteach.jp/httpdocs/demo_code_1/public/images/* /var/www/vhosts/uteach.jp/httpdocs/demo_code/shared/storage/app/public/students
+rm -f /var/www/vhosts/uteach.jp/httpdocs/demo_code/shared/storage/app/public/students/sort_asc.png
+rm -f /var/www/vhosts/uteach.jp/httpdocs/demo_code/shared/storage/app/public/students/sort_both.png
+rm -f /var/www/vhosts/uteach.jp/httpdocs/demo_code/shared/storage/app/public/students/sort_desc.png
+
+cp /var/www/vhosts/uteach.jp/httpdocs/demo_code_1/public/favicon.ico /var/www/vhosts/uteach.jp/httpdocs/demo_code/shared/storage/app/public/favicon.ico
+chown uteach /var/www/vhosts/uteach.jp/httpdocs/demo_code/shared/storage/app/public/favicon.ico
+
+cp /var/www/vhosts/uteach.jp/httpdocs/demo_code_1/public/email_header_image* /var/www/vhosts/uteach.jp/httpdocs/demo_code/shared/storage/app/public/
+chown uteach /var/www/vhosts/uteach.jp/httpdocs/demo_code/shared/storage/app/public/email_header_image*
+
+ln -sfn /var/www/vhosts/uteach.jp/httpdocs/demo_code/current/ demo
+
+----------------------------------
+
+For bcejr project
+
+cp app.benchanjr.com/.env bcejr/shared/.env
+
+cp -r /var/www/vhosts/benchanjr.com/app.benchanjr.com/public/images/books /var/www/vhosts/benchanjr.com/bcejr/shared/storage/app/public
+cp -r /var/www/vhosts/benchanjr.com/app.benchanjr.com/public/images/lesson/video /var/www/vhosts/benchanjr.com/bcejr/shared/storage/app/public/lesson
+cp /var/www/vhosts/benchanjr.com/app.benchanjr.com/public/images/lesson/* /var/www/vhosts/benchanjr.com/bcejr/shared/storage/app/public/lesson/thumbnail
+cp /var/www/vhosts/benchanjr.com/app.benchanjr.com/public/lesson_files/* /var/www/vhosts/benchanjr.com/bcejr/shared/storage/app/public/lesson_files
+cp /var/www/vhosts/benchanjr.com/app.benchanjr.com/public/student_paper_test_files/* /var/www/vhosts/benchanjr.com/bcejr/shared/storage/app/public/student_paper_test_files
+cp /var/www/vhosts/benchanjr.com/app.benchanjr.com/public/todo_files/* /var/www/vhosts/benchanjr.com/bcejr/shared/storage/app/public/todo_files
+
+cp /var/www/vhosts/benchanjr.com/app.benchanjr.com/public/images/* /var/www/vhosts/benchanjr.com/bcejr/shared/storage/app/public/students
+rm -f /var/www/vhosts/benchanjr.com/bcejr/shared/storage/app/public/students/sort_asc.png
+rm -f /var/www/vhosts/benchanjr.com/bcejr/shared/storage/app/public/students/sort_both.png
+rm -f /var/www/vhosts/benchanjr.com/bcejr/shared/storage/app/public/students/sort_desc.png
+
+cp /var/www/vhosts/benchanjr.com/app.benchanjr.com/public/favicon.ico /var/www/vhosts/benchanjr.com/bcejr/shared/storage/app/public/favicon.ico
+chown benchanjr /var/www/vhosts/benchanjr.com/bcejr/shared/storage/app/public/favicon.ico
+
+cp /var/www/vhosts/benchanjr.com/app.benchanjr.com/public/email_header_image* /var/www/vhosts/benchanjr.com/bcejr/shared/storage/app/public/
+chown benchanjr /var/www/vhosts/benchanjr.com/bcejr/shared/storage/app/public/email_header_image*
+
+------------------------------------------------------------------------------------------------
+
+For bcekt project
+
+cp app.benchaneikaiwa.com/.env bcekt/shared/.env
+
+cp -r /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/images/books /var/www/vhosts/benchaneikaiwa.com/bcekt/shared/storage/app/public
+cp -r /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/images/lesson/video /var/www/vhosts/benchaneikaiwa.com/bcekt/shared/storage/app/public/lesson
+cp /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/images/lesson/* /var/www/vhosts/benchaneikaiwa.com/bcekt/shared/storage/app/public/lesson/thumbnail
+cp /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/lesson_files/* /var/www/vhosts/benchaneikaiwa.com/bcekt/shared/storage/app/public/lesson_files
+cp /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/student_paper_test_files/* /var/www/vhosts/benchaneikaiwa.com/bcekt/shared/storage/app/public/student_paper_test_files
+cp /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/todo_files/* /var/www/vhosts/benchaneikaiwa.com/bcekt/shared/storage/app/public/todo_files
+
+cp /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/images/* /var/www/vhosts/benchaneikaiwa.com/bcekt/shared/storage/app/public/students
+rm -f /var/www/vhosts/benchaneikaiwa.com/bcekt/shared/storage/app/public/students/sort_asc.png
+rm -f /var/www/vhosts/benchaneikaiwa.com/bcekt/shared/storage/app/public/students/sort_both.png
+rm -f /var/www/vhosts/benchaneikaiwa.com/bcekt/shared/storage/app/public/students/sort_desc.png
+
+cp /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/favicon.ico /var/www/vhosts/benchaneikaiwa.com/bcekt/shared/storage/app/public/favicon.ico
+chown benchaneikaiwa /var/www/vhosts/benchaneikaiwa.com/bcekt/shared/storage/app/public/favicon.ico
+
+cp /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/email_header_image* /var/www/vhosts/benchaneikaiwa.com/bcekt/shared/storage/app/public/
+chown benchaneikaiwa /var/www/vhosts/benchaneikaiwa.com/bcekt/shared/storage/app/public/email_header_image*
+
+------------------------------------------
+
+For all 4 projects - course image
+
+cp /var/www/vhosts/uteach.jp/httpdocs/test_code_1/public/images/course/* /var/www/vhosts/uteach.jp/httpdocs/test_code/shared/storage/app/public/course/
+cp /var/www/vhosts/uteach.jp/httpdocs/demo_code_1/public/images/course/* /var/www/vhosts/uteach.jp/httpdocs/demo_code/shared/storage/app/public/course/
+cp /var/www/vhosts/benchaneikaiwa.com/app.benchaneikaiwa.com/public/images/course/* /var/www/vhosts/benchaneikaiwa.com/bcekt/shared/storage/app/public/course/
+cp /var/www/vhosts/benchanjr.com/app.benchanjr.com/public/images/course/* /var/www/vhosts/benchanjr.com/bcejr/shared/storage/app/public/course/
+
+~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,0 +1,161 @@
+.top-navigation .navbar-brand {
+    background: #1ab394;
+    color: #fff;
+    padding: 15px 25px;
+    line-height: 20px;
+    margin: 0;
+}
+
+.top-navigation .navbar {
+    padding: 0;
+    background: #fff;
+}
+
+.top-navigation .nav > li > a {
+    padding: 15px 20px !important;
+    color: #676a6c;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.top-navigation .nav li.active > a {
+    color: #1ab394 !important;
+}
+
+.top-navigation .nav > li a:hover, .top-navigation .nav > li a:focus {
+    color: #1ab394;
+    text-decoration: none;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.top-navigation .navbar-nav .dropdown-menu {
+    box-shadow: none;
+    border: 1px solid #e7eaec;
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.top-navigation .navbar-nav .show .dropdown-menu > li > a, .top-navigation .navbar-nav .show .dropdown-menu .dropdown-header {
+    padding: 10px 15px 10px 20px;
+    display: block;
+    color: #676a6c;
+
+    &:hover {
+        color: #1ab394;
+        text-decoration: none;
+    }
+}
+
+#top-search {
+    border: none;
+}
+
+.navbar-toggler {
+    background-color: #1ab394;
+    color: #fff;
+    padding: 6px 12px;
+    font-size: 14px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.fixed-top {
+    -webkit-transition-duration: 0.4s;
+    background: #fff;
+    transition-duration: 0.4s;
+    border-bottom: 1px solid #e7eaec;
+    // z-index: 2030; // Commented to fix z-index set by boostratpVue modal is less than 2030 sometimes so modal appears behind navbar. issue was with payment batches crud modals
+}
+
+.top-navigation .nav > a:hover, .top-navigation .nav > a:focus {
+    background: #fff;
+    color: #1ab394;
+}
+
+.top-navigation .nav > a {
+    padding: 15px 20px;
+    color: #676a6c;
+    font-weight: 600;
+}
+/* FULLCALENDAR */
+.fc-state-default {
+  background-color: #ffffff;
+  background-image: none;
+  background-repeat: repeat-x;
+  box-shadow: none;
+  color: #333333;
+  text-shadow: none;
+}
+.fc-state-default {
+  border: 1px solid;
+}
+.fc-button {
+  color: inherit;
+  border: 1px solid #e7eaec;
+  cursor: pointer;
+  display: inline-block;
+  height: 1.9em;
+  line-height: 1.9em;
+  overflow: hidden;
+  padding: 0 0.6em;
+  position: relative;
+  white-space: nowrap;
+}
+.fc-state-active {
+  background-color: #1ab394;
+  border-color: #1ab394;
+  color: #ffffff;
+}
+.fc-header-title h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: inherit;
+}
+.fc-content .fc-widget-header,
+.fc-content .fc-widget-content {
+  border-color: #e7eaec;
+  font-weight: normal;
+}
+.fc-border-separate tbody {
+  background-color: #F8F8F8;
+}
+.fc-state-highlight {
+  background: none repeat scroll 0 0 #FCF8E3;
+}
+.external-event {
+  padding: 5px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.fc-ltr .fc-event-hori.fc-event-end,
+.fc-rtl .fc-event-hori.fc-event-start {
+  border-radius: 2px;
+}
+.fc-event,
+.fc-agenda .fc-event-time,
+.fc-event a {
+  padding: 4px 6px;
+  background-color: #1ab394;
+  /* background color */
+  border-color: #1ab394;
+  /* border color */
+}
+.fc-event-time,
+.fc-event-title {
+  color: #717171;
+  padding: 0 1px;
+}
+.ui-calendar .fc-event-time,
+.ui-calendar .fc-event-title {
+  color: #fff;
+}
+.fc-event-container a.fc-event {
+  color: #fff;
+}

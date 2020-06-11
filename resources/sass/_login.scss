@@ -1,0 +1,32 @@
+.gray-bg, .bg-muted {
+    background-color: #f3f3f4;
+}
+
+.loginscreen.middle-box {
+    width: 300px;
+}
+
+.signup-screen.middle-box {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.middle-box {
+    max-width: 400px;
+    z-index: 100;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.logo-name {
+    color: #e6e6e6;
+    font-size: 180px;
+    font-weight: 800;
+    letter-spacing: -10px;
+    margin-bottom: 0;
+}
+
+.middle-box h1 {
+    font-size: 170px;
+}
+

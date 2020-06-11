@@ -1,0 +1,289 @@
+.top-navigation.fixed-nav #wrapper, .fixed-nav #wrapper.top-navigation {
+    margin-top: 50px;
+}
+
+#page-wrapper {
+    padding: 0 15px;
+    min-height: 1000px;
+}
+
+.top-navigation .wrapper.wrapper-content {
+    padding: 50px;
+
+    @include media-breakpoint-down(xs) {
+		padding: 50px 0;
+	}
+}
+
+.ibox {
+    clear: both;
+    margin-bottom: 25px;
+    margin-top: 0;
+    padding: 0;
+
+    &.calendar {
+        display: -webkit-box;
+        display: flex;
+    }
+}
+
+.ibox-title {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #ffffff;
+    border-color: #e7eaec;
+    -webkit-border-image: none;
+    -o-border-image: none;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 2px 0 0;
+    color: inherit;
+    margin-bottom: 0;
+    padding: 15px 15px 7px;
+    min-height: 48px;
+}
+
+.ibox-title h5 {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 0 7px;
+    padding: 0;
+    text-overflow: ellipsis;
+    float: left;
+}
+
+.ibox-tools {
+    display: block;
+    float: none;
+    margin-top: 0;
+    position: relative;
+    padding: 0;
+    text-align: right;
+}
+
+.ibox-tools a {
+    cursor: pointer;
+    margin-left: 5px;
+    color: #c4c4c4;
+}
+
+.ibox.collapsed .ibox-content {
+    display: none;
+}
+
+.ibox-content {
+    clear: both;
+}
+
+.ibox-content {
+    background-color: #ffffff;
+    color: inherit;
+    padding: 15px 20px 20px 20px;
+    border-color: #e7eaec;
+    -webkit-border-image: none;
+    -o-border-image: none;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0;
+}
+
+.ibox-content form {
+	width: 100%;
+}
+
+#external-events {
+    min-width: 200px;
+    padding: 0 15px;
+}
+
+#external-events h4 {
+    font-size: 16px;
+    margin-top: 0;
+    padding-top: 1em;
+}
+
+#external-events .fc-event {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+#external-events p {
+    margin: 1.5em 0;
+    font-size: 11px;
+    color: #666;
+}
+
+#external-events p input {
+    margin: 0;
+    vertical-align: middle;
+}
+
+.modal-open .animated {
+    -webkit-animation-fill-mode: unset;
+    animation-fill-mode: unset;
+}
+
+.modal-backdrop {
+    z-index: 2040 !important;
+}
+
+.modal {
+    z-index: 2050 !important;
+}
+
+.modal-dialog {
+    width: 600px;
+    margin: 30px auto;
+    max-width: unset;
+
+    @include media-breakpoint-down(xs) {
+        width: unset;
+        margin: 30px 15px;
+    }
+}
+
+.modal textarea {
+    max-width: 100%;
+}
+
+.fc-day.holiday {
+    background: rgba(227, 52, 47, 0.14);
+}
+
+.fc-event-container .fc-event.holiday {
+    display: none;
+}
+
+/* table.registered-students th {
+  position: relative;
+}
+table.registered-students th form {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+table.registered-students th form#cancel {
+  right: 227px;
+}
+table.registered-students th form#partial-cancel {
+  right: 105px;
+}
+table.registered-students th form#signin {
+    right: 105px;
+} */
+
+// table.waitlisted-students th {
+//     position: relative;
+
+//      form {
+//         position: absolute;
+//         top: 2px;
+//         right: 2px;
+
+//         &#waitlist-delete {
+//             right: 86px;
+//         }
+//     }
+// }
+
+.fc-event {
+    &.full-class {
+        background-color: #c0c0c0 !important;
+        border-color: #c0c0c0 !important;
+    }
+
+    &.is-event {
+        background-color: #00ff94;
+        border-color: #00ff94;
+    }
+
+    &.none-exists {
+        display: none;
+    }
+}
+
+.fc-day {
+    &.all-day {
+        background: #C1EDB4;
+    }
+}
+
+.modal-footer.facing-calendar form.delete {
+    margin-bottom: 0;
+}
+
+.course-progress {
+    .unit-progress {
+        margin-bottom: 10px;
+
+        .unit-button {
+            a {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        .lesson {
+            &.complete {
+                background: #E3F0DA;
+            }
+        }
+    }
+}
+
+.question-wrapper {
+    margin: 20px 0px;
+
+    .question {
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .answer-wrapper {
+        .answer {
+            display: inline-block;
+            margin-right: 20px;
+        }
+    }
+}
+
+.rating {
+    border: none;
+    float: left;
+}
+
+.rating > input { display: none; }
+.rating > label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating > label {
+    color: #ddd;
+    float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+
+.teacher-filter-wrapper {
+    padding: 10px;
+
+    .form-check-label {
+        color: #fff;
+    }
+}
