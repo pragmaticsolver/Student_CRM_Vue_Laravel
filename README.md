@@ -1,6 +1,5 @@
 # BCE
 
-
 ## Setup Project In localhost
 
 ### Requirements
