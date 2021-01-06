@@ -17,7 +17,7 @@
     "remove-local-branches": "git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done"
   },
   "devDependencies": {
-    "axios": "^0.18",
+    "axios": "^0.21",
     "cross-env": "^5.2.0",
     "fullcalendar": "^3.10.0",
     "jquery": "^3.2",
