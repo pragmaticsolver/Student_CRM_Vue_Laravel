@@ -24,7 +24,7 @@
     "jquery-ui": "^1.12.1",
     "laravel-mix": "^4.0.15",
     "lodash": "^4.17.5",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "popper.js": "^1.12",
     "sass": "^1.16.1",
     "sass-loader": "^7.1.0",
